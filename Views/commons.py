@@ -6,9 +6,9 @@ def ordered_list(args, data):
     sorted_by = args['order_by'] if 'order_by' in args else 'datetime'
     lat = args['lat'] if 'lat' in args else 0
     lon = args['lon'] if 'lon' in args else 0
-
     start = int(args['start']) if 'start' in args else 0
     stop = int(args['stop']) if 'stop' in args else len(data)
+
     if sorted_by in data[0].keys():
         events = sorted(data, key=itemgetter(sorted_by))
     else:
