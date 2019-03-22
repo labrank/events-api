@@ -1,12 +1,15 @@
-from flask import jsonify, request, Blueprint, abort
+from flask import jsonify, request, Blueprint, abort, request
+import itertools
+from operator import itemgetter
+
 from controller import data
+from Views.commons import ordered_list
 
 events = Blueprint('events', __name__)
 
 @events.route('/events', methods=['GET'])
 def get_events():
-    output = []
-    output.append(data.data)
+    output = ordered_list(request.args, data.data)
     return jsonify({"events": output})
 
 @events.route('/events/<string:uuid>', methods=['GET'])
