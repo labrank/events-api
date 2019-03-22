@@ -16,7 +16,7 @@ Just another API written in flask, the URIS are:
 
 ## Examples
 
-- http://0.0.0.0:5000/events: *get all the events*
-- http://0.0.0.0:5000/events?order_by=name&lat=-99.06036355776905&lat=19.44700103604631&start=0&stop=10: *Use all filters*
+- http://0.0.0.0:5000/events *get all the events*
+- http://0.0.0.0:5000/events?order_by=name&lat=-99.06036355776905&lat=19.44700103604631&start=0&stop=10 *Use all filters*
 
 *The filters work with every request that return events, like /types/events*
