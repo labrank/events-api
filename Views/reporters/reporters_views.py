@@ -26,7 +26,7 @@ def get_events():
 def get_event(name):
     output = []
     info = ordered_list(request.args, data.data)
-    for item in info[0]:
+    for item in info:
         if item['reporter'] == name:
             output.append(item)
     return jsonify({'count':len(output),'Reporter':name,'events': output})
